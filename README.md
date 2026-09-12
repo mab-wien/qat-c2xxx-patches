@@ -78,5 +78,7 @@ forks of the vendor driver and the OpenWrt package feed). Run
   https://github.com/dl12345/quickassist-openwrt-denverton/pull/1
 - Vendor driver PR (against @lecoq's maintained fork):
   https://github.com/lecoq/qat_c2xxx/pull/2
+- Official `openwrt/packages` scoping issue (interest in upstream inclusion):
+  https://github.com/openwrt/packages/issues/30510
 - OpenWrt forum discussion:
   https://forum.openwrt.org/t/intel-quick-assist-v1-5-drivers-and-openssl-1-1-1e-acceleration-engine-for-19-07-2/58692
