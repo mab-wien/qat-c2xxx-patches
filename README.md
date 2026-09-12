@@ -35,6 +35,36 @@ meant to be dropped into the `patches/` directory of the OpenWrt
 `qat1.5.l.1.13.0-19.tar.gz` vendor source during its normal `Build/Patch`
 step (`quilt`/OpenWrt patch application, `-p1`).
 
+## Lineage
+
+Not a straight line — Intel's reference driver was picked up independently
+by two separate community efforts before this work touched either of them:
+
+```mermaid
+graph TD
+    A["Intel QAT1.5 SDK<br/>qat1.5.l.1.11.0-36 -&gt; 1.13.0-19<br/>raw vendor tarball, enterprise Linux only"]
+    A --> B["lecoq/qat_c2xxx (2016-2017)<br/>+ DKMS packaging<br/>+ generic-distro build fixes<br/>tested on Ubuntu 16.04"]
+    A --> C["dl12345/quickassist-openwrt-denverton (2020)<br/>+ OpenWrt packaging (Makefile/Config.in)<br/>+ posted to OpenWrt forum for 19.07.2"]
+    B --> D["mab-wien/qat_c2xxx<br/>branch kernel-6.12-compat<br/>+ Linux 6.12 kernel API fixes"]
+    C --> E["mab-wien/quickassist-openwrt-denverton<br/>branch kernel-6.12-c2xxx<br/>+ same fixes, OpenWrt-packaged<br/>+ verified on real Atom C2358 hardware"]
+    D --> F["PR: lecoq/qat_c2xxx#2"]
+    E --> G["PR: dl12345/quickassist-openwrt-denverton#1"]
+    G --> H["Goal: openwrt/packages (official feed)<br/>until merged: mab-wien's fork serves as a working feed"]
+```
+
+## Goal
+
+Short-term, this repo plus the two PRs above are the deliverable: a working,
+hardware-verified kernel-6.12 port. Longer-term, the aim is to get the
+underlying fixes merged upstream (into `lecoq/qat_c2xxx` and
+`dl12345/quickassist-openwrt-denverton` respectively) and then propose
+`quickassist-c2xxx` for inclusion in the official
+[openwrt/packages](https://github.com/openwrt/packages) feed, once it's
+kept current and strongSwan/XFRM integration has been proven out. Until any
+of that happens, `mab-wien/quickassist-openwrt-denverton` (branch
+`kernel-6.12-c2xxx`) can be used directly as a third-party feed
+(`feeds.conf.default`) for anyone who needs it now.
+
 ## Related repos
 
 This work spans three repos (this patch-set archive, plus a branch each on
