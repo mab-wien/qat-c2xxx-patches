@@ -1,0 +1,11 @@
+--- a/quickassist/adf/dyn/src/adf_dyn_rings.c
++++ b/quickassist/adf/dyn/src/adf_dyn_rings.c
+@@ -94,7 +94,7 @@
+ /*
+  * Dummy kernelspace callback for dyn rings
+  */
+-void adf_dyn_dummy_callback(icp_comms_trans_handle comms_handle, void *pMsg)
++static void adf_dyn_dummy_callback(icp_comms_trans_handle comms_handle, void *pMsg)
+ {
+         /* The real callback lives in dyn */
+         return;

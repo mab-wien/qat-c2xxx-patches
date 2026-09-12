@@ -1,0 +1,10 @@
+--- a/quickassist/lookaside/access_layer/src/common/crypto/sym/nrbg/lac_sym_nrbg_api.c
++++ b/quickassist/lookaside/access_layer/src/common/crypto/sym/nrbg/lac_sym_nrbg_api.c
+@@ -104,6 +104,7 @@
+ #include "lac_sal_types_crypto.h"
+ #include "lac_common.h"
+ #include "lac_mem.h"
++#include "lac_hooks.h"
+ 
+ /**
+  *******************************************************************************

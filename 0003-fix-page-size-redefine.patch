@@ -1,0 +1,11 @@
+--- a/quickassist/utilities/libusdm_drv/linux/user_space/qae_page_table.h	2026-09-11 20:39:12.603049533 +0200
++++ b/quickassist/utilities/libusdm_drv/linux/user_space/qae_page_table.h	2026-09-11 20:39:12.603049533 +0200
+@@ -81,7 +81,7 @@
+ #include <string.h>
+ #endif
+ 
+-#ifndef __FreeBSD__ /* FreeBSD, already defined in machine param.h */
++#ifndef PAGE_SIZE
+ #define PAGE_SIZE (0x1000)
+ #define PAGE_SHIFT (12)
+ #endif

@@ -1,0 +1,10 @@
+--- a/quickassist/adf/wireless/src/adf_wireless_events.c
++++ b/quickassist/adf/wireless/src/adf_wireless_events.c
+@@ -76,6 +76,7 @@
+ #include "adf_cfg.h"
+ #include "adf_platform.h"
+ #include "adf_wireless.h"
++#include "adf_wireless_events.h"
+ #include "Osal.h"
+ 
+ /*

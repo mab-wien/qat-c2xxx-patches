@@ -1,0 +1,47 @@
+--- a/quickassist/utilities/downloader/Target_CoreLibs/uclo/uclo.c
++++ b/quickassist/utilities/downloader/Target_CoreLibs/uclo/uclo.c
+@@ -5584,7 +5584,7 @@
+  * 
+  * 
+  *****************************************************************************/
+-int 
++static int 
+ UcLo_AuthenticateFW(icp_firml_handle_t *handle, fw_auth_desc_t* desc)
+ {
+     unsigned int fcuSts = 0, retry = 0;
+@@ -5663,7 +5663,7 @@
+  * 
+  * 
+  *****************************************************************************/
+-int 
++static int 
+ UcLo_UnmapAuthFw (icp_firml_handle_t *handle, fw_auth_desc_t** desc)
+ {
+     icp_firml_dram_desc_t dramDesc;
+@@ -5709,7 +5709,7 @@
+  * 
+  * 
+  *****************************************************************************/
+-int 
++static int 
+ UcLo_MapAuthFw (icp_firml_handle_t *handle, char* image, 
+                 unsigned int size, fw_auth_desc_t** desc)
+ {
+@@ -5979,7 +5979,7 @@
+  * 
+  * 
+  *****************************************************************************/
+-int 
++static int 
+ Uclo_LoadFW (icp_firml_handle_t *handle, fw_auth_desc_t* desc)
+ {
+     int i = 0;
+@@ -7594,7 +7594,7 @@
+                     void * objBuf,
+                     unsigned int* mmpVer)
+ {
+-    mmpVer = 0;
++    (void)mmpVer;
+     
+     return (UCLO_SUCCESS);;
+ }

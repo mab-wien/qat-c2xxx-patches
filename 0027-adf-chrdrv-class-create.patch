@@ -1,0 +1,11 @@
+--- a/quickassist/adf/drivers/common/linux/src/adf_chr_drv.c
++++ b/quickassist/adf/drivers/common/linux/src/adf_chr_drv.c
+@@ -141,7 +141,7 @@
+                 return FAIL;
+         }
+ 
+-        drv_info->drv_class = class_create(drv_info->owner, drv_info->name);
++        drv_info->drv_class = class_create(drv_info->name);
+         if (IS_ERR(drv_info->drv_class)) {
+                 ADF_ERROR("class_create failed for device: %s\n",
+                               drv_info->name);

@@ -1,0 +1,11 @@
+--- a/quickassist/utilities/osal/include/Osal.h	2026-09-11 22:58:38.213982162 +0200
++++ b/quickassist/utilities/osal/include/Osal.h	2026-09-11 22:58:38.217765653 +0200
+@@ -653,7 +653,7 @@
+  *  Time
+  *****************************/
+ 
+-int __init osal_init(void);
++int osal_init(void);
+ void osal_exit(void);
+ 
+ /* Retrieve current system time */

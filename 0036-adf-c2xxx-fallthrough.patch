@@ -1,0 +1,10 @@
+--- a/quickassist/adf/platform/ACCELDEV/src/adf_c2xxx_hw_data.c
++++ b/quickassist/adf/platform/ACCELDEV/src/adf_c2xxx_hw_data.c
+@@ -249,6 +249,7 @@
+             {
+                 return DEV_SKU_2;
+             }
++            fallthrough;
+         case ICP_C2XXX_MAX_ACCELENGINES:
+             return DEV_SKU_1;
+         default:

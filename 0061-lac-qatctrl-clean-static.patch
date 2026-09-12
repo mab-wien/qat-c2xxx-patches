@@ -1,0 +1,11 @@
+--- a/quickassist/lookaside/access_layer/src/common/ctrl/sal_qat_ctrl.c
++++ b/quickassist/lookaside/access_layer/src/common/ctrl/sal_qat_ctrl.c
+@@ -436,7 +436,7 @@
+ /*
+  * Free all memory allocated for the QAT instance
+  */
+-void SalCtrl_QatClean(sal_qat_service_t *qat_instance)
++static void SalCtrl_QatClean(sal_qat_service_t *qat_instance)
+ {
+     LAC_OS_CAFREE(qat_instance->aeTargetIds);
+     LAC_OS_CAFREE(qat_instance->qatAeMask);

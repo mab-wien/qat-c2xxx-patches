@@ -1,0 +1,11 @@
+--- a/quickassist/utilities/downloader/Target_CoreLibs/halAe/accelcomp/halAeChip.h
++++ b/quickassist/utilities/downloader/Target_CoreLibs/halAe/accelcomp/halAeChip.h
+@@ -204,4 +204,8 @@
+ 
+ typedef uint64 import_var_type; 
+ 
++int halAe_enableAutoInitSram(icp_firml_handle_t *handle, unsigned int aeMask);
++int halAe_checkAes(icp_firml_handle_t *handle, 
++               unsigned int aeMask);
++
+ #endif /* __HALAECHIP_H */

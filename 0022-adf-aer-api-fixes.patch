@@ -1,0 +1,34 @@
+--- a/quickassist/adf/drivers/ACCELDEV/linux/src/adf_acceldev_aer.c
++++ b/quickassist/adf/drivers/ACCELDEV/linux/src/adf_acceldev_aer.c
+@@ -259,7 +259,7 @@
+                 ADF_ERROR("Can't find acceleration device\n");
+                 return PCI_ERS_RESULT_DISCONNECT;
+         }
+-        pci_cleanup_aer_uncorrect_error_status(pdev);
++        pci_aer_clear_nonfatal_status(pdev);
+         /* Reset device and wait for result */
+         if (adf_aer_schedule_reset_dev(accel_dev, 1)) {
+ 
+@@ -308,9 +308,6 @@
+ 
+         drv = (struct pci_driver *)adf_driver;
+         drv->err_handler = &adf_err_handler;
+-        if (pci_enable_pcie_error_reporting(pdev)) {
+-                ADF_PRINT("Failed to enable PCI error reporting\n");
+-        }
+ #endif
+         return SUCCESS;
+ 
+@@ -322,12 +319,6 @@
+  */
+ void adf_disable_aer(icp_accel_dev_t *accel_dev)
+ {
+-        #ifdef CONFIG_PCIEAER
+-        struct pci_dev *pdev = accel_dev->pciAccelDev.pDev;
+-        if (pci_disable_pcie_error_reporting(pdev)) {
+-                ADF_ERROR("Can not disable AER for AccelDev\n");
+-        }
+-        #endif
+ }
+ 
+ /*

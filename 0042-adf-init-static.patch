@@ -1,0 +1,11 @@
+--- a/quickassist/adf/accel_mgr/src/adf_init.c
++++ b/quickassist/adf/accel_mgr/src/adf_init.c
+@@ -435,7 +435,7 @@
+  * adf_cfgAddInternalValues
+  * Add internal config values to general section of the given accel dev
+  */
+-CpaStatus
++static CpaStatus
+ adf_cfgAddInternalValues(icp_accel_dev_t *accel_dev)
+ {
+     CpaStatus status = CPA_STATUS_FAIL;

@@ -1,0 +1,18 @@
+--- a/quickassist/lookaside/access_layer/src/common/crypto/sym/drbg/lac_sym_rdrand.c
++++ b/quickassist/lookaside/access_layer/src/common/crypto/sym/drbg/lac_sym_rdrand.c
+@@ -79,6 +79,7 @@
+ */
+ #include "cpa_types.h"
+ #include "cpa.h"
++#include "cpa_cy_drbg.h"
+ 
+ /*
+ *******************************************************************************
+@@ -87,6 +88,7 @@
+ */
+ #include "lac_common.h"
+ #include "Osal.h"
++#include "lac_sym_drbg_rdrand.h"
+ 
+ /*
+ *******************************************************************************

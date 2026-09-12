@@ -1,0 +1,11 @@
+--- a/quickassist/lookaside/access_layer/src/common/qat_ctrl/qat_admin.c
++++ b/quickassist/lookaside/access_layer/src/common/qat_ctrl/qat_admin.c
+@@ -109,7 +109,7 @@
+  * QatCtrl_AdminSyncCb
+  * Admin Sync Callback function.
+  */
+-void
++static void
+ QatCtrl_AdminSyncCb(void *pCallbackTag, CpaStatus status)
+ {
+     LacSync_GenWakeupSyncCaller(pCallbackTag, status);

@@ -1,0 +1,34 @@
+--- a/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c	2026-09-11 20:50:26.010868983 +0200
++++ b/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c	2026-09-11 20:50:26.018557574 +0200
+@@ -966,7 +966,7 @@
+                      "chr_drv_create_class(): Invalid parameter value ",
+                      -EINVAL);
+ 
+-    drv_info->drv_class = class_create(THIS_MODULE, drv_info->name);
++    drv_info->drv_class = class_create(drv_info->name);
+     if (IS_ERR(drv_info->drv_class))
+     {
+         mm_err("%s:%d class_create failed\n",__func__,__LINE__);
+--- a/quickassist/utilities/libusdm_drv/linux/include/qae_mem_utils.h	2026-09-11 20:50:26.014713279 +0200
++++ b/quickassist/utilities/libusdm_drv/linux/include/qae_mem_utils.h	2026-09-11 20:50:26.022401869 +0200
+@@ -93,7 +93,8 @@
+ 
+ #define mm_info(...) pr_info(USDM_MOD __VA_ARGS__)
+ 
+-#define mm_warning(...) pr_warning(USDM_MOD __VA_ARGS__)
++#define mm_warning(...) pr_warn(USDM_MOD __VA_ARGS__)
++int handle_other_ioctls(uint32_t cmd);
+ 
+ /*define types which need to vary between 32 and 64 bit*/
+ #define QAE_PAGE_SHIFT 12
+--- a/quickassist/utilities/libusdm_drv/linux/kernel_space/qdm.c	2026-09-11 20:50:26.014713279 +0200
++++ b/quickassist/utilities/libusdm_drv/linux/kernel_space/qdm.c	2026-09-11 20:50:26.037779053 +0200
+@@ -129,7 +129,7 @@
+ 			IOMMU_READ|IOMMU_WRITE|IOMMU_CACHE);
+ #else
+ 	return iommu_map(domain, *iova, paddr, size,
+-			IOMMU_READ|IOMMU_WRITE|IOMMU_CACHE);
++			IOMMU_READ|IOMMU_WRITE|IOMMU_CACHE, GFP_KERNEL);
+ #endif
+ }
+ EXPORT_SYMBOL_GPL(qdm_iommu_map);

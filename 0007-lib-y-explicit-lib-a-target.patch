@@ -1,0 +1,17 @@
+--- a/quickassist/build_system/build_files/OS/linux_2.6_kernel_space_rules.mk	2026-09-11 21:57:35.098834491 +0200
++++ b/quickassist/build_system/build_files/OS/linux_2.6_kernel_space_rules.mk	2026-09-11 21:57:35.152187155 +0200
+@@ -67,12 +67,12 @@
+ else
+ obj-m+=$(OUTPUT_NAME).o
+ $(OUTPUT_NAME)-objs :=lib.a $(patsubst %.c,%.o, $(MODULE_SOURCES)) $(ADDITIONAL_KERNEL_LIBS)
+-lib-m := $(patsubst %.c,%.o, $(SOURCES)) $(patsubst %.S,%.o, $(ASM_SOURCES))
++lib-y := $(patsubst %.c,%.o, $(SOURCES)) $(patsubst %.S,%.o, $(ASM_SOURCES))
+ endif
+ 
+ $(LIB_STATIC): dirs
+ 	@echo 'Creating static library ${LIB_STATIC}'; \
+-	$(MAKE) -C $(KERNEL_SOURCE_ROOT)/ M=$(PWD) obj-m=""; \
++	$(MAKE) -C $(KERNEL_SOURCE_ROOT)/ M=$(PWD) obj-m="" lib.a; \
+ 	echo 'Copying outputs $(OBJ)';\
+ 	test -f lib.a  &&  (ar -t lib.a | xargs ar -rcsD $($(PROG_ACY)_FINAL_OUTPUT_DIR)/$(LIB_STATIC)); \
+ 	for f in $(OBJ); do test -f "$$f" && mv -f "$$f" $($(PROG_ACY)_FINAL_OUTPUT_DIR); done; \

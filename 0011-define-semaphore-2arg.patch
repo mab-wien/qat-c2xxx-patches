@@ -1,0 +1,13 @@
+--- a/quickassist/utilities/osal/src/linux/kernel_space/OsalThread.c	2026-09-11 22:28:16.588916531 +0200
++++ b/quickassist/utilities/osal/src/linux/kernel_space/OsalThread.c	2026-09-11 22:28:16.596489638 +0200
+@@ -43,8 +43,8 @@
+ DECLARE_MUTEX (osalThreadMutex);
+ DECLARE_MUTEX (osalThreadStopMutex);
+ #else
+-DEFINE_SEMAPHORE (osalThreadMutex);
+-DEFINE_SEMAPHORE (osalThreadStopMutex);
++DEFINE_SEMAPHORE (osalThreadMutex, 1);
++DEFINE_SEMAPHORE (osalThreadStopMutex, 1);
+ #endif
+ 
+ OSAL_PUBLIC OSAL_STATUS

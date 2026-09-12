@@ -1,0 +1,11 @@
+--- a/quickassist/lookaside/access_layer/include/icp_sal_poll.h
++++ b/quickassist/lookaside/access_layer/include/icp_sal_poll.h
+@@ -165,7 +165,7 @@
+   *************************************************************************/
+ CpaStatus
+ icp_sal_CyPollDpInstance(CpaInstanceHandle instanceHandle,
+-                         Cpa32U response_quota);
++                         Cpa8U response_quota);
+ 
+ /*************************************************************************
+   * @ingroup SalPoll

@@ -1,0 +1,11 @@
+--- a/quickassist/adf/wireless/src/adf_wireless_rings.c
++++ b/quickassist/adf/wireless/src/adf_wireless_rings.c
+@@ -92,7 +92,7 @@
+ /*
+  * Dummy kernelspace callback for wireless rings
+  */
+-void adf_dummy_callback(icp_comms_trans_handle comms_handle, void *pMsg)
++static void adf_dummy_callback(icp_comms_trans_handle comms_handle, void *pMsg)
+ {
+         /* The real callback lives in wireless */
+         return;

@@ -1,0 +1,10 @@
+--- a/quickassist/utilities/osal/src/linux/kernel_space/OsalZlib.c	2026-09-11 22:40:30.425925737 +0200
++++ b/quickassist/utilities/osal/src/linux/kernel_space/OsalZlib.c	2026-09-11 22:40:30.437283290 +0200
+@@ -211,6 +211,7 @@
+                            srcBuffList->pBuffers[srcBuffIdx].dataLenInBytes;
+                    break;
+                }
++               fallthrough;
+            } /* Z_BUF_ERROR falls through on unrecoverable error */
+            case Z_NEED_DICT:
+            case Z_DATA_ERROR:

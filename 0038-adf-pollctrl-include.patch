@@ -1,0 +1,23 @@
+--- a/quickassist/adf/transport/src/adf_poll_ctrl.c
++++ b/quickassist/adf/transport/src/adf_poll_ctrl.c
+@@ -125,6 +125,10 @@
+  * via the ISR method.
+  * N.B. The response_quota is per ring.
+  */
++extern CpaStatus icp_sal_pollBank(Cpa32U accelId,
++                           Cpa32U bank_number,
++                           Cpa32U response_quota);
++
+ CpaStatus icp_sal_pollBank(Cpa32U accelId,
+                            Cpa32U bank_number,
+                            Cpa32U response_quota)
+@@ -173,6 +177,9 @@
+  * via the ISR method.
+  * N.B. The response_quota is per ring.
+  */
++extern CpaStatus icp_sal_pollAllBanks(Cpa32U accelId,
++                               Cpa32U response_quota);
++
+ CpaStatus icp_sal_pollAllBanks(Cpa32U accelId,
+                                Cpa32U response_quota)
+ {
