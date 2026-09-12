@@ -34,3 +34,13 @@ meant to be dropped into the `patches/` directory of the OpenWrt
 `quickassist-c2xxx` package, which applies them against the pristine
 `qat1.5.l.1.13.0-19.tar.gz` vendor source during its normal `Build/Patch`
 step (`quilt`/OpenWrt patch application, `-p1`).
+
+## Links
+
+- Full test report: [issue #1](https://github.com/mab-wien/qat-c2xxx-patches/issues/1)
+- OpenWrt package PR (against the `quickassist-openwrt-denverton` feed):
+  https://github.com/dl12345/quickassist-openwrt-denverton/pull/1
+- Vendor driver PR (against @lecoq's maintained fork):
+  https://github.com/lecoq/qat_c2xxx/pull/2
+- OpenWrt forum discussion:
+  https://forum.openwrt.org/t/intel-quick-assist-v1-5-drivers-and-openssl-1-1-1e-acceleration-engine-for-19-07-2/58692
