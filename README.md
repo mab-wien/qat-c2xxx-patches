@@ -35,6 +35,12 @@ meant to be dropped into the `patches/` directory of the OpenWrt
 `qat1.5.l.1.13.0-19.tar.gz` vendor source during its normal `Build/Patch`
 step (`quilt`/OpenWrt patch application, `-p1`).
 
+## Related repos
+
+This work spans three repos (this patch-set archive, plus a branch each on
+forks of the vendor driver and the OpenWrt package feed). Run
+`./checkout.sh` to clone all three, each already on the right branch.
+
 ## Links
 
 - Full test report: [issue #1](https://github.com/mab-wien/qat-c2xxx-patches/issues/1)
